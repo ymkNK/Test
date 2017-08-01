@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ChatRoom</title>
+<script type="text/javascript">
+function check()
+{
+	var uname=document.getElementById("uname").value;
+	var issub=0
+	if(uname.length==0)
+		{
+		document.getElementById("d1").style.color="red";
+		document.getElementById("d1").innerHTML="昵称不能为空";
+		issub=0;
+		}
+	else  
+		{
+		document.getElementById("d1").style.color="green";
+		document.getElementById("d1").innerHTML="√";
+	
+		issub=1;
+		}
+	
+	if(issub==1)
+		{
+		document.getElementById("subm").removeAttribute("disabled");
+		}
+	else
+		{
+		document.getElementById("subm").setAttribute("disabled", "disabled");
+		}
+}
+function changeimg(){
+	document.getElementById("img1").src="code?"+Math.random();
+	
+}
+</script>
+</head>
+<body>
+<h1>Welcome to ChatRoom</h1>
+<form name="form1" id="form1" action ="sortuser" method="get" onmouseout="check()">
+<table>
+<tr><td>请输入你的昵称</td></tr>
+<tr><td><input name="uname" id="uname" ></td><td><div id="d1"style="color:#f00"></div></td>
+<td><div id="d1"style="color:#f00"></div></td></tr>
+<tr><td><input name="code" id="code"></td><td><img id="img1" name="img1" src="code" onclick="changeimg()"></td></tr>
+<tr><td><input id="subm" type="submit" value="进入聊天室" disabled="disabled"></td></tr>
+</table>
+</form>
+</body>
+</html>
